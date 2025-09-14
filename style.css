@@ -754,7 +754,7 @@ body {
   font-family: var(--font-family-base);
   line-height: var(--line-height-normal);
   color: var(--color-text);
-  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-bg-1) 100%);
+  background: var(--color-bg-1);
   overflow-x: hidden;
 }
 
@@ -793,27 +793,23 @@ body {
   margin-bottom: var(--space-20);
 }
 
-.avatar-placeholder {
+.profile-image {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-teal-400) 0%, var(--color-teal-600) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   margin: 0 auto;
   border: 4px solid rgba(var(--color-white), 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  transition: transform var(--duration-normal) var(--ease-standard);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(var(--color-teal-300-rgb), 0.3);
+  transition: all var(--duration-normal) var(--ease-standard);
 }
 
-.avatar-placeholder:hover {
+.profile-image:hover {
   transform: scale(1.05);
-}
-
-.avatar-placeholder i {
-  font-size: 3rem;
-  color: var(--color-white);
+  border-color: rgba(var(--color-teal-300-rgb), 0.5);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(var(--color-teal-300-rgb), 0.6);
 }
 
 .user-name {
@@ -1278,6 +1274,11 @@ body {
     margin-bottom: var(--space-24);
   }
   
+  .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+  
   .nav-menu {
     margin-bottom: var(--space-24);
   }
@@ -1356,13 +1357,9 @@ body {
     height: 2px;
   }
   
-  .avatar-placeholder {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .avatar-placeholder i {
-    font-size: 2.5rem;
+  .profile-image {
+    width: 90px;
+    height: 90px;
   }
   
   .user-name {
@@ -1384,6 +1381,11 @@ body {
     background: var(--color-surface);
     color: var(--color-text);
     border-bottom: 2px solid var(--color-border);
+  }
+  
+  .profile-image {
+    border: 2px solid var(--color-border);
+    box-shadow: none;
   }
   
   .content-section {
